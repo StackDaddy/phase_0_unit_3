@@ -1,12 +1,12 @@
-## Evaluate a Website! 
+Evaluate a Website! 
  
 1) How does this website follow HTML Best Practices? Are there any places where 
 it does not?  Provide examples of the "bad" code.Did you like the way they used HTML tags?  Please use examples with your arguments.
 
-#The best design feature in my eyes is the use of the table to organize the stories.  The is a lot of inline css.  For example, i feel like the style on the first table tag (<table border=0 cellpadding=0 cellspacing=0 width="85%" bgcolor=#f6f6ef>), could and should be accessed using an id.  
+The best design feature in my eyes is the use of the table to organize the stories.  The is a lot of inline css.  For example, i feel like the style on the first table tag (<table border=0 cellpadding=0 cellspacing=0 width="85%" bgcolor=#f6f6ef>), could and should be accessed using an id.  
  
 2) What do you think of the HTML? Did the writers use IDs and Classes properly? 
-#unless I am missing something, I do not see that many id tags.  I see mostly classes.  However, this does seem to make sense considering all of the content is organized into a table, and a table is the epitame of classification and repitition.  
+unless I am missing something, I do not see that many id tags.  I see mostly classes.  However, this does seem to make sense considering all of the content is organized into a table, and a table is the epitame of classification and repitition.  
 
 
  
@@ -43,11 +43,11 @@ If so, what?
  
 5) How did the authors organize the CSS file? Was it DRY?
 
-#They organized the css in the order that html tags appeared, for instance they started off with body, and then they moved onto table.  They they moved onto classes, and then I like how they handled the classes after they were clicked on.  
+They organized the css in the order that html tags appeared, for instance they started off with body, and then they moved onto table.  They they moved onto classes, and then I like how they handled the classes after they were clicked on.  
  
 6) Did the authors incorporate any responsive design into the site?
 
-# yes.  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+ yes.  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
   .votearrow { background-size: 10px; background-image: url("grayarrow2x.gif"); }
 }
 
@@ -62,7 +62,7 @@ If so, what?
 7) What are your overall thoughts on the HTML/CSS from this website based on 
 what you've read?
 
-#More functional that pretty.  
+More functional that pretty.  
 
 
 
