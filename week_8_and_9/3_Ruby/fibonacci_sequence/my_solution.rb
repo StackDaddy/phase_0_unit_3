@@ -32,7 +32,19 @@ end
 
 # 4. Refactored Solution
 
-
+def is_fibonacci?(num)
+    fibs = [0,1,1]
+    return true if num == 0
+    while fibs[-1] <= num
+        if fibs[-1] == num
+            return true
+        else
+            fibs << fibs[-1]+fibs[-2]
+            fibs.shift
+        end
+    end
+    false
+end
 
 
 
