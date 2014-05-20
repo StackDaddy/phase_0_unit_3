@@ -63,3 +63,5 @@ puts is_fibonacci?(8670007398507948658051922) == false
 
 
 # 5. Reflection 
+#Cool excersize.   Great teamwork.  This was a rgeat excersize in thinking about how much memory you 
+#are going to take up when refactoring.  
