@@ -26,7 +26,35 @@ var scores = [ [80, 70, 70, 100],
 // __________________________________________
 // Write your code below.
 
+var average = function(array) {
+  var sum = 0
+  for (var i = 0; i<array.length; i++) {
+    sum += array[i];
+  };
+  var average = sum / array.length 
 
+  return average 
+
+};
+
+
+var gradebook = {};
+
+for (var i = 0; i < students.length; i++) {
+  gradebook[students[i]] = {};
+}
+
+for (var i = 0; i < scores.length; i++) {
+  gradebook[students[i]]["testScores"] = scores[i];
+}
+
+gradebook.addScore = function(name, score) {
+  gradebook[name].testScores.push(score);
+}
+
+gradebook.getAverage = function(name) {
+  return average(gradebook[name].testScores);
+}
 
 
 
@@ -41,7 +69,7 @@ var scores = [ [80, 70, 70, 100],
 
 
 
-// __________________________________________
+// Top not work.  Good job team.  Way to kick it into gear.__________________________________________
 // Reflect
 
 
