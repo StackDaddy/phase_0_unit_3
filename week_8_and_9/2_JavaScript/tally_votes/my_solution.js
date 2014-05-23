@@ -33,11 +33,28 @@ var votes = {
 }
 
 // Tally the votes in voteCount.
+
+
+
+
 var voteCount = {
   president: {},
   vicePresident: {},
   secretary: {},
   treasurer: {}
+}
+
+for (var name in votes) {
+  var slate = votes[name];
+  for (var position in slate) {
+    var vote = slate[position];
+    if (voteCount[position].hasOwnProperty(vote)) {
+    voteCount[position][vote] += 1;
+    }
+    else {
+    voteCount[position][vote] = 1;
+    }
+  }
 }
 
 /* The name of each student receiving a vote for an office should become a property 
@@ -56,13 +73,32 @@ voteCount would be ...
 
 /* Once the votes have been tallied, assign each officer position the name of the 
 student who received the most votes. */
+
+
+
 var officers = {
   president: undefined,
   vicePresident: undefined,
   secretary: undefined,
   treasurer: undefined
+
+
 }
 
+
+
+for (var position in voteCount) {
+    var candidates = voteCount[position];
+    var max = 0;
+    for (var candidate in candidates) {
+        var votes = candidates[candidate];
+        if (votes > max) {
+            max = votes;
+            officers[position] = candidate;
+        }
+    }
+    max = 0;
+}
 // Pseudocode
 
 
@@ -83,7 +119,7 @@ var officers = {
 
 
 
-// __________________________________________
+// _Tough one_________________________________________
 // Reflection
 
 
