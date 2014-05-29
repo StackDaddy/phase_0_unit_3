@@ -16,17 +16,26 @@ end
 
 def print_longest_serving_reps(minimum_years)  #sorry guys, oracle needs me, i didn't finish this!
   puts "LONGEST SERVING REPRESENTATIVES"
-  puts $db.execute("SELECT name FROM congress_members WHERE years_in_congress > #{minimum_years}")
+  long_reps = $db.execute("SELECT name, years_in_congress FROM congress_members WHERE years_in_congress > #{minimum_years}")
+  long_reps.each { |rep| puts "#{rep[0]} - #{rep[1]}" } 
 end
 
-def print_lowest_grade_level_speakers
+def print_lowest_grade_level_speakers(grade_level)
   puts "LOWEST GRADE LEVEL SPEAKERS (less than < 8th grade)"
+  low_grade = $db.execute("SELECT name FROM congress_members WHERE grade_current < #{grade_level}")
+  low_grade.each { |rep| puts rep }
 end
 
 def print_separator
   puts 
   puts "------------------------------------------------------------------------------"
   puts 
+end
+
+def periphs 
+	puts "REPRESENTATIVES FROM NEW JERSEY, NEW YORK, MAINE, FLORIDA, and ALASKA"
+	dudes = $db.execute("SELECT name, location FROM congress_members WHERE location IN ('NY', 'NJ', 'ME', 'FL', 'AL') AND name LIKE ('Rep%') ORDER BY location")
+	dudes.each { |bro| puts "#{bro[0]} - #{bro[1]}" }
 end
 
 
@@ -39,9 +48,11 @@ print_longest_serving_reps(35)
 # output should look like:  Rep. C. W. Bill Young - 41 years
 
 print_separator
-print_lowest_grade_level_speakers 
+print_lowest_grade_level_speakers(8) 
 # TODO - Need to be able to pass the grade level as an argument, look in schema for "grade_current" column
 
+
+periphs
 # TODO - Make a method to print the following states representatives as well:
 # (New Jersey, New York, Maine, Florida, and Alaska)
 
